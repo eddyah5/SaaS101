@@ -1,14 +1,6 @@
 # SaaS101
 Django-stripe-subscriptions - In this project, we experiment with building a simple SaaS app with Stripe payment gateway API to client handle subscriptions and payments nicely.
-The project is comprised of 7 parts accordingly. The code structure:
-PART 1)PROJECT SETUP ENVIRONMENT, 
-PART 2)STRIPE INTEGRATION 
-PART 3)DATABASE MODEL 
-PART 4)GET PUBLISHABLE KEY 
-PART 5)CREATE CHECKOUT SESSION 
-PART 6)USER REDIRECT 
-PART 7)CREATE AND TEST STRIPE WEBHOOKS AND ENDPOINTS
-More on this below
+The project is comprised of 7 parts accordingly. More on this later.
 ======================================================================================================================================
 **TO USE THIS PROJECT FOLLOW THE FOLLOWING STEPS:
 **
@@ -36,6 +28,7 @@ STRIPE_ENDPOINT_SECRET = '<your endpoint secret here>'
 **Project parts:**
 Since this project code base was grabbed from this post from https://testdriven.io/blog/django-stripe-subscriptions/ , I feel like it is worth mentioning, and also I needed to put in some hints on how to achieve each step if you decided to code along from scratch instead of downloading and using the repo.
 If you have decided to do it from scratch, use the hints below with the above post to code along. This offers the advantage of working COMMAND-LINE-INTERFACE commands:
+
 **PART 1)
 PROJECT SETUP ENVIRONMENT(WINDOWS ONLY ON YOUR VSCODE OR ANY OTHER CODE EDITOR)**
 1) Inside your Code editor, open the terminal, then first **cd** into Desktop or any other location
@@ -60,9 +53,9 @@ PROJECT SETUP ENVIRONMENT(WINDOWS ONLY ON YOUR VSCODE OR ANY OTHER CODE EDITOR)*
 
 **PART 2
 STRIPE INTIGRATION**
-20) To add Stripe payment gateway do in your terminal"**pip install stripe"**
-21) Visit stripe.com and login to the dashboard. But if you don't have stripe account, just sign up then login
-22) Inside Stripe dashboard, set up your account payment system step by step as Stripe will instruct you
+20) To add a Stripe payment gateway do in your terminal"**pip install stripe"**
+21) Visit stripe.com and log in to the dashboard. But if you don't have a Stripe account, just sign up and then login
+22) Inside the Stripe dashboard, set up your account payment system step by step as Stripe will instruct you
 23) Once completed, now we need a stripe API keys for integration so to the top-right corner and click on "Developers"
 24) Still to the top-right corner, beside Developers, click on "Test mode" to toggle the API we need to test mode only
 24) Still on the same page, check the right center of the window screen you will see "For developers", under there you can see our much-needed API keys which are 2, one is the Publishable key and the other is the Secret key. Copy both and keep them safe and secret
@@ -81,15 +74,15 @@ STRIPE_PRICE_ID = 'price_1NY5nMKRuIYIFY0C742qZ0WG'
 33) Add some code to django-allauth config to djangostripe/settings.py (Check the post for code)
 34) Register the allauth URLs (Check the post for code)
 35) Apply migrations **python manage.py migrate**
-36) **python manage.py runserver** and sign up with username, email and password
-37) Go back to your terminal and follow the link to confirm your email and login at the same time, you will see a blue button
+36) **python manage.py runserver** and sign up with username, email, and password
+37) Go back to your terminal and follow the link to confirm your email and log in at the same time, you will see a blue button
 
 **PART 3
 DATABASE MODEL**
 38) Create our model inside subscriptions/models.py (Check the post for code)
 39) Register it with the admin in subscriptions/admin.py (Check the post for code)
-40) python manage.py makemigrations
-41) python manage.py migrate
+40) **python manage.py makemigrations**
+41) **python manage.py migrate**
 
 **PART 4
 GET PUBLISHABLE KEY**
@@ -118,15 +111,15 @@ USER REDIRECT**
 58) Let's create success and cancel views under subscriptions/views.py
 59) Create the success.html and cancel.html templates as well under templates (Check the post for code)
 60) Register the new Views under subscriptions/urls.py (Check the post for code)
-61) Use 4242 4242 4242 4242 for the card number to test, while expiration date = 20/28 or any future date, CVC=any 3 digits, then pay and your will be redirected to success page. If you did not login before it will ask you to Login before you can see it though
+61) Use **4242 4242 4242 4242** for the card number to test, while expiration date = 20/28 or any future date, CVC=any 3 digits, then pay and you will be redirected to the success page. If you did not log in before it will ask you to Login before you can see it through
 
 **PART 7
 CREATE AND TEST STRIPE WEBHOOKS AND ENDPOINTS**
 62) Create a new view called stripe_webhook which will create a new StripeCustomer every time someone subscribes to our service
-1)Login to your stripe dashboard
-2)Go to Developers ---->Webhooks
-3)Click on "Add endpoint" and put https://github.com/stripe/stripe-cli for the endpoint URL with a description if you like
-4)Select events to listen. Select all events.
-5)Click on add endpoints and wait for it to add successfully
-6)Copy the STRIPE_ENDPOINT_SECRET and past it under settings.py under your project folder
-7)Go back to your local host and run the app, repeat step 61, and once you are done refresh your stripe webhook page to see subscription the event listed OR go to under payments to see the transactions
+i)Login to your stripe dashboard
+ii)Go to Developers ---->Webhooks
+iii)Click on "Add endpoint" and put https://github.com/stripe/stripe-cli for the endpoint URL with a description if you like
+iv)Select events to listen to. Select all events.
+v)Click on add endpoints and wait for it to add successfully
+vi)Copy the STRIPE_ENDPOINT_SECRET and past it under settings.py under your project folder
+vii)Go back to your local host and run the app, repeat step 61, and once you are done refresh your stripe webhook page to see the subscription the event listed OR go to under Payments to see the transactions
