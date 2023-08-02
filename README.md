@@ -24,7 +24,7 @@ STRIPE_ENDPOINT_SECRET = '<your endpoint secret here>'
 
 **f)**Run the server:
 (env)$ python manage.py runserver
-***
+
 =======================================================================================================================================
 **Project parts:**
 Since this project code base was grabbed from this post from https://testdriven.io/blog/django-stripe-subscriptions/ , I feel like it is worth mentioning, and also I needed to put in some hints on how to achieve each step if you decided to code along from scratch instead of downloading and using the repo.
