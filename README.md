@@ -27,8 +27,7 @@ STRIPE_ENDPOINT_SECRET = '<your endpoint secret here>'
 
 =======================================================================================================================================
 **Project parts:**
-Since this project code base was grabbed from this post from https://testdriven.io/blog/django-stripe-subscriptions/ , I feel like it is worth mentioning, and also I needed to put in some hints on how to achieve each step if you decided to code along from scratch instead of downloading and using the repo.
-If you have decided to do it from scratch, use the hints below with the above post to code along. This offers the advantage of working COMMAND-LINE-INTERFACE commands:
+Since this project code base was grabbed from this post from https://testdriven.io/blog/django-stripe-subscriptions/ , I feel like it is worth mentioning, and also I needed to put in some hints on how to achieve each step if you decided to code along from scratch instead of downloading and using the repo. If you have decided to do it from scratch, use the hints below with the above post to code along. This offers the advantage of working COMMAND-LINE-INTERFACE commands:
 
 **PART 1)
 PROJECT SETUP ENVIRONMENT(WINDOWS ONLY ON YOUR VSCODE OR ANY OTHER CODE EDITOR)**
@@ -67,9 +66,7 @@ STRIPE_SECRET_KEY = '<enter your stripe secret key>'
 27) Put your **product name, description, image/logo(optional), price, and product category**. Dont forget to select either recurring or one-time payment just below
 28) Still on the same page, click on the "**Additional option**" to expand more. Then look for "**Feature list**" and click on it to add a line-by-line feature lists that will be displayed on the pricing table. You can also change the pricing model under the pricing information
 29) Click add, and repeat steps 26 - 28 to add more products if you want
-30) Next, grab the API ID of the price, and Save the ID for all the plans in the settings.py file like so:
-# djangostripe/settings.py
-STRIPE_PRICE_ID = 'price_1NY5nMKRuIYIFY0C742qZ0WG'
+30) Next, grab the API ID of the price, and Save the ID for all the plans in the settings.py file like (Check the post for code)
 31) Under # subscriptions/views.py import login_required
 32) **pip install django-allauth** (For addressing user authentication), then under # djangostripe/settings.py, add the following under INSTALLED_APPS (Check the post for code)
 33) Add some code to django-allauth config to djangostripe/settings.py (Check the post for code)
@@ -87,9 +84,9 @@ DATABASE MODEL**
 
 **PART 4
 GET PUBLISHABLE KEY**
-42) mkdir static (Makes a folder called static)
-43) cd static (To enter the folder static)
-44) code main.js (Makes a new JavaScript file called main.js)(Check the post for code)
+42) **mkdir static** (Makes a folder called static)
+43) **cd static** (To enter the folder static)
+44) **code main.js** (Makes a new JavaScript file called main.js)(Check the post for code)
 45) Perform a sanity check on the JS file (Check the post for code)
 46) Update the settings.py file so Django knows where to find static files (Check the post for code)
 47) Add the static template tag along with the new script tag inside the HTML template (Check the post for code)
