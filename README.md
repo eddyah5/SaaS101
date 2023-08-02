@@ -1,7 +1,6 @@
 # SaaS101
 Django-stripe-subscriptions - In this project, we experiment with building a simple SaaS app with Stripe payment gateway API to client handle subscriptions and payments nicely.
-The project is comprised of 7 parts accordingly. More on this later.
-======================================================================================================================================
+The project is comprised of 7 parts accordingly. More on this later.=================================================================================================================================
 **TO USE THIS PROJECT FOLLOW THE FOLLOWING STEPS:
 **
 **a)**Fork/Clone this repo
