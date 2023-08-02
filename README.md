@@ -1,5 +1,5 @@
 # SaaS101
-**Django-stripe-subscriptions** - In this project, we experiment with building a simple SaaS app with Stripe payment gateway API to client handle subscription and payments nicely.
+Django-stripe-subscriptions** - In this project, we experiment with building a simple SaaS app with Stripe payment gateway API to client handle subscription and payments nicely.
 The project is comprised of 7 parts accordingly. The code structure:
 [PART 1)PROJECT SETUP ENVIRONMENT, 
 PART 2)STRIPE INTEGRATION 
